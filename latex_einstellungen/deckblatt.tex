@@ -1,0 +1,41 @@
+% Cover page (Deckblatt)
+% Uses variables defined in latex_einstellungen/variablen.tex
+\thispagestyle{empty}
+
+% Optional: Logo (place your file under assets/ and uncomment)
+%\begin{figure}[t]
+%  \centering
+%  \includegraphics[width=0.25\textwidth]{assets/logo.pdf}
+%\end{figure}
+
+\vspace*{2em}
+\begin{center}
+    {\Large \textbf{\documentType}}\\[1em]
+    {\LARGE \textbf{\titleDocument}}\\[0.5em]
+    {\large \subjectDocument}
+\end{center}
+
+\vspace{3em}
+\begin{center}
+    \textbf{\university}\\
+    \faculty\\
+    \program\\[1em]
+    \degree
+\end{center}
+
+\vspace{3em}
+\begin{center}
+    \textbf{Autor/in}\\
+    \authorName\\
+    geboren am \authorBirthdate\\
+    Matrikelnummer: \studentId
+\end{center}
+
+\vspace{2em}
+\begin{flushleft}
+\begin{tabular}{@{}ll}
+\textbf{Betreuung durch:} & \advisorA \\
+                          & \advisorB \\
+\textbf{Version vom:}    & \city, \today \\
+\end{tabular}
+\end{flushleft}
