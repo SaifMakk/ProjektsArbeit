@@ -8,19 +8,26 @@
 %  \includegraphics[width=0.25\textwidth]{assets/logo.pdf}
 %\end{figure}
 
-\vspace*{2em}
+\vspace*{1.2cm}
 \begin{center}
-    {\Large \textbf{\documentType}}\\[1em]
-    {\LARGE \textbf{\titleDocument}}\\[0.5em]
-    {\large \subjectDocument}
+    {\normalsize \documentType}
 \end{center}
 
-\vspace{3em}
+\vspace{2.8cm}
 \begin{center}
-    \textbf{\university}\\
-    \faculty\\
-    \program\\[1em]
-    \degree
+   
+    {\Large \subjectDocument}\\[0.8em]
+\end{center}
+
+\vspace{5.5em}
+\begin{center}
+    \begingroup
+    \small
+    \ifdefempty{\university}{}{\university\par}
+    \ifdefempty{\faculty}{}{\faculty\par}
+    \ifdefempty{\program}{}{\program\par}
+    
+    \endgroup
 \end{center}
 
 \vspace{3em}
@@ -36,6 +43,13 @@
 \begin{tabular}{@{}ll}
 \textbf{Betreuung durch:} & \advisorA \\
                           & \advisorB \\
+\end{tabular}
+\end{flushleft}
+
+\vfill
+
+\begin{flushleft}
+\begin{tabular}{@{}ll}
 \textbf{Version vom:}    & \city, \today \\
 \end{tabular}
 \end{flushleft}
