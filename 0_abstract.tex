@@ -1,28 +1,28 @@
 \section*{Kurzfassung}
 
-Diese Arbeit entwickelt und evaluiert ein FreeRTOS-basiertes System zur akustischen 
-Entfernungsmessung zwischen zwei ESP32-S3-Knoten für den \emph{Außenbereich}. Ziel ist 
-eine zuverlässige und kostengünstige Kurzstreckenmessung trotz Wind, Umgebungsgeräuschen 
-und Mehrwegeffekten. Zwei identische Knoten mit I\textsuperscript{2}S-MEMS-Mikrofon und 
- Lautsprecher tauschen hörbare Chirps im Ping-Pong-Verfahren aus; ein Funklink synchronisiert 
- Startzeitpunkte und Zeitstempel. Zur Genauigkeitssteigerung kommen eine geeignete 
- Chirp-Charakteristik im oberen Hörbereich, eine temperaturgestützte 
- Schallgeschwindigkeitskorrektur, ein korrelationsbasiertes ToF-Verfahren mit 
- Sub-Sample-Peak-Schätzung sowie eine einmalige Verzögerungskalibrierung zum Einsatz. 
+Diese Arbeit entwickelt und evaluiert ein FreeRTOS-basiertes System zur akustischen
+Entfernungsmessung zwischen zwei ESP32-S3-Knoten für den \emph{Außenbereich}. Ziel ist
+eine zuverlässige und kostengünstige Kurzstreckenmessung trotz Wind, Umgebungsgeräuschen
+und Mehrwegeffekten. Zwei identische Knoten mit I\textsuperscript{2}S-MEMS-Mikrofon und
+ Lautsprecher tauschen hörbare Chirps im Ping-Pong-Verfahren aus; ein Funklink synchronisiert
+ Startzeitpunkte und Zeitstempel. Zur Genauigkeitssteigerung kommen eine geeignete
+ Chirp-Charakteristik im oberen Hörbereich, eine temperaturgestützte
+ Schallgeschwindigkeitskorrektur, ein korrelationsbasiertes ToF-Verfahren mit
+ Sub-Sample-Peak-Schätzung sowie eine einmalige Verzögerungskalibrierung zum Einsatz.
  Jitter wird durch ISR-Zeitstempel, I\textsuperscript{2}S-DMA und kerngebundene,
-  priorisierte FreeRTOS-Tasks reduziert. Feldtests im Freien bestätigen die Eignung 
-  hörfrequenzbasierter Audio-ToF-Messungen und bilden die Grundlage für robustere 
+  priorisierte FreeRTOS-Tasks reduziert. Feldtests im Freien bestätigen die Eignung
+  hörfrequenzbasierter Audio-ToF-Messungen und bilden die Grundlage für robustere
   Mehrknotensysteme.
 
 \section*{Abstract}
 
-This work develops and evaluates a FreeRTOS-based system for acoustic ranging between 
-two ESP32-S3 nodes for \emph{outdoor} use. The goal is reliable, low-cost short-range 
-measurements despite wind, ambient noise, and multipath. Two identical nodes equipped 
-with an I\textsuperscript{2}S MEMS microphone and a loudspeaker exchange audible chirps 
+This work develops and evaluates a FreeRTOS-based system for acoustic ranging between
+two ESP32-S3 nodes for \emph{outdoor} use. The goal is reliable, low-cost short-range
+measurements despite wind, ambient noise, and multipath. Two identical nodes equipped
+with an I\textsuperscript{2}S MEMS microphone and a loudspeaker exchange audible chirps
 in a ping-pong scheme; a radio link synchronizes start times and timestamps. To improve accuracy,
- the design employs a suitable chirp in the upper audible band, temperature-based speed-of-sound 
- correction (on-board sensor), cross-correlation with sub-sample peak estimation, and a one-time 
+ the design employs a suitable chirp in the upper audible band, temperature-based speed-of-sound
+ correction (on-board sensor), cross-correlation with sub-sample peak estimation, and a one-time
  delay calibration. Jitter is reduced through ISR-level timestamping, I\textsuperscript{2}S DMA,
-  and core-pinned, prioritized FreeRTOS tasks. Outdoor field tests confirm the suitability of 
+  and core-pinned, prioritized FreeRTOS tasks. Outdoor field tests confirm the suitability of
   audible-band audio ToF and provide a basis for more robust multi-node systems.

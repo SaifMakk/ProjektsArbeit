@@ -1,5 +1,31 @@
 \section{Einleitung}
 
-Führen Sie in das Thema ein, motivieren Sie die Arbeit und formulieren Sie die
-Ziele. Skizzieren Sie den Aufbau des Dokuments. Dieser Text dient als
-Platzhalter und sollte vollständig durch Ihre eigene Einleitung ersetzt werden.
+\subsection{Motivation}
+
+Viele Außenanwendungen erfordern verlässliche \emph{mittlere} Messdistanzen bis etwa 25\,m, etwa bei Rendezvous- und Abstandshalteaufgaben mobiler Systeme, temporären Sensornetzen oder der schnellen Vermessung kurzer Basislinien. Verbreitete Technologien adressieren diesen Bereich nur unvollständig: GNSS liefert im Nahbereich keine robuste Relativdistanz und ist unter Bewuchs oder Randbebauung eingeschränkt; UWB und LiDAR bieten hohe Leistung, gehen jedoch mit erhöhten Kosten, Energiebedarf und teils regulatorischen bzw.\ Sichtlinienanforderungen einher. Daraus resultiert der Bedarf an einer kostengünstigen, energieeffizienten und einfach integrierbaren Lösung, die unter realen Außenbedingungen hinreichende Reichweite und Robustheit bereitstellt.
+
+Akustische Time-of-Flight-Verfahren im hörbaren Frequenzbereich schließen hier eine Lücke: Sie basieren auf handelsüblichen Lautsprechern und MEMS-Mikrofonen, benötigen keine lizenzpflichtigen Frequenzbänder und lassen sich auf verbreiteten Mikrocontroller-Plattformen implementieren. Für Distanzen bis 25\,m verschiebt sich der Entwurfsschwerpunkt weg von maximaler Zentimeterpräzision hin zu Reichweite, Detektionssicherheit und Energieeffizienz. Zu bewältigen sind insbesondere Wind- und Umgebungsgeräusche, Mehrwegeffekte sowie systemische Jitterquellen. Zudem stellen sich zentrale Gestaltungsfragen zur Signalform (Zeit-Bandbreite-Produkt, Fensterung), zur Korrelation und Synchronisation zwischen Knoten sowie zur mechanischen Kopplung und Energieversorgung im Feld.
+
+\subsection{Zielsetzung}
+
+Ziel dieser Arbeit ist die Konzeption, prototypische Umsetzung und experimentelle Bewertung eines FreeRTOS-basierten Audio-ToF-Systems für Outdoor-Distanzen bis 25\,m. Untersucht werden (i) geeignete Chirp-Parameter im oberen Hörbereich, (ii) korrelationsbasierte Auswerteverfahren mit Sub-Sample-Schätzung, (iii) Funk-basierte Synchronisation und RTOS-Strategien zur Jitterreduktion sowie (iv) der Einfluss von Temperatur, Wind und Mehrwege auf Reichweite und Detektionssicherheit. Die Leistungsfähigkeit wird in Feldtests quantifiziert (Erkennungsrate, Ausreißerquote, mittlerer Fehler/Repeatability) und hinsichtlich Energie-/Reichweiten-Trade-offs beurteilt.
+
+
+\subsection{Aufbau der Arbeit}
+
+
+Kapitel~2 (Grundlagen) stellt die theoretischen und technischen Grundlagen vor: Schallausbreitung im Außenraum, Signalgestaltung für akustische ToF-Verfahren, Korrelationsmethoden sowie relevante Eigenschaften von ESP32-S3 und FreeRTOS.
+
+Kapitel~3 (Anforderungen) leitet aus Anwendungsszenarien funktionale und nicht-funktionale Anforderungen ab: Reichweite, Detektionssicherheit, Energiebudget und Kostenrahmen.
+
+Kapitel~4 (Hardware) beschreibt den Hardwareentwurf vom Steckbrettprototyp bis zur PCB-Implementierung: Lautsprecher- und Mikrofonwahl, Verstärker- und Versorgungsdesign, mechanische Entkopplung sowie EMV- und Layoutaspekte.
+
+Kapitel~5 (Software) erläutert die Softwarearchitektur unter FreeRTOS: Task-Zuschnitt, Prioritäten und Kernbindung, I\textsuperscript{2}S-DMA, funkbasierte Synchronisation sowie Maßnahmen zur Jitterreduktion.
+
+Kapitel~6 (Signaldesign) behandelt das Signaldesign: Chirp-Charakteristik mit Fensterung und Bandbegrenzung, Vorverarbeitung, korrelationsbasierte Laufzeitschätzung mit Sub-Sample-Peak-Refinement, Temperaturkompensation und Verzögerungskalibrierung.
+
+Kapitel~7 (Methodik) definiert die Messmethodik: Testaufbau und -umgebung im Außenbereich, Versuchspläne für Distanzen von 5--25\,m mit LoS/NLoS-Varianten, Metriken und Auswerteverfahren.
+
+Kapitel~8 (Ergebnisse) präsentiert die Messergebnisse zu Reichweite, Erkennungsrate, Fehlerkennwerten, Jitter und Energie pro Messung und diskutiert diese im Kontext der definierten Anforderungen.
+
+Kapitel~9 (Zusammenfassung und Ausblick) fasst die Ergebnisse zusammen und gibt einen Ausblick auf Mehrknotensysteme und 2D/3D-Erweiterungen.
