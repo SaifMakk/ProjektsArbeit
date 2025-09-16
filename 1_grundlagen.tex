@@ -4,6 +4,19 @@ Dieses Kapitel stellt die theoretischen und technischen Grundlagen vor, die zum 
 
 \subsection{Schallausbreitung im Außenraum}
 
+Die Ausbreitung von Schallwellen im Außenraum wird maßgeblich durch die physikalischen Eigenschaften der Luft sowie durch Umwelteinflüsse bestimmt. Die Schallgeschwindigkeit $c$ in trockener Luft lässt sich näherungsweise in Abhängigkeit von der Lufttemperatur $T$ in Grad Celsius durch die Beziehung
+\[
+c \approx 331{,}3 \, \text{m/s} + 0{,}6 \cdot T \, \text{m/s}
+\]
+beschreiben \cite{kuttruff2000raumakustik}. Temperaturänderungen wirken sich somit direkt auf die Laufzeitmessungen aus und müssen bei präzisen Time-of-Flight-Verfahren berücksichtigt werden. Neben der Temperatur beeinflussen auch Luftfeuchtigkeit und Luftdruck die Schallgeschwindigkeit, wenngleich in geringerem Maße \cite{bass1995atmospheric}.
+
+Ein wesentlicher Aspekt der Schallausbreitung im Freien ist die Dämpfung mit zunehmender Entfernung. Diese setzt sich aus geometrischer Ausbreitung (Kugelausbreitung) und frequenzabhängiger atmosphärischer Absorption zusammen. Während die geometrische Dämpfung mit $1/r$ (bei Druckamplituden) bzw. $1/r^2$ (bei Intensitäten) beschrieben wird, nimmt die Absorption mit steigender Frequenz deutlich zu. Dies begrenzt die Reichweite insbesondere hochfrequenter akustischer Signale.
+
+Darüber hinaus beeinflussen Umgebungsbedingungen die Ausbreitung erheblich. Wind kann durch Geschwindigkeitsgradienten zu einer Richtungsabhängigkeit der Schallgeschwindigkeit führen, wodurch Laufzeiten verzerrt werden. Turbulenzen verursachen zusätzlich Pegelschwankungen und Phasenmodulationen \cite{salomons2001computational}. Auch Boden- und Gebäudereflexionen führen zu Mehrwegeffekten, die bei Laufzeitmessungen als systematische Störgrößen in Erscheinung treten können. Diese Effekte sind im Kontext akustischer Entfernungsmessung besonders kritisch, da sie Fehlinterpretationen bei der Korrelation verursachen können.
+
+Für die vorliegende Arbeit sind insbesondere zwei Punkte relevant: Erstens die temperaturabhängige Variation der Schallgeschwindigkeit, die bei Messungen im Außenraum durch eine entsprechende Korrektur kompensiert werden muss. Zweitens die Beeinflussung durch Mehrwegeffekte und atmosphärisches Rauschen, welche die Detektionswahrscheinlichkeit der gesendeten Signale reduzieren und die Erkennungsrate limitieren können.
+
+
 \subsection{Signalgestaltung für akustische ToF-Verfahren}
 
 \subsection{Korrelationsmethoden}
