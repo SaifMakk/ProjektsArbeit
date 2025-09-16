@@ -8,6 +8,12 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Bar22]{richardbarry2022freertos}
+\textsc{Barry}, Richard:
+\newblock \emph{Mastering the FreeRTOS Real Time Kernel}.
+\newblock 10th.
+\newblock Real Time Engineers Ltd., 2022
+
 \bibitem[BSZ{\etalchar{+}}95]{bass1995atmospheric}
 \textsc{Bass}, Henry~E. ; \textsc{Sutherland}, Louis~C. ; \textsc{Zuckerwar},
   Allan~J. ; \textsc{Blackstock}, David~T.  ; \textsc{Hester}, Dennis~M.:
@@ -15,14 +21,52 @@
 \newblock {In: }\emph{The Journal of the Acoustical Society of America} 97
   (1995), Nr. 1, S. 680--683
 
+\bibitem[CB60]{cook1960pulse}
+\textsc{Cook}, Charles~E. ; \textsc{Bernfeld}, Martin:
+\newblock Pulse compression—key to more efficient radar transmission.
+\newblock {In: }\emph{Proceedings of the IRE} 48 (1960), Nr. 3, S. 310--316
+
+\bibitem[KC76]{knapp1976generalized}
+\textsc{Knapp}, Charles~H. ; \textsc{Carter}, G.~C.:
+\newblock The generalized correlation method for estimation of time delay.
+\newblock {In: }\emph{IEEE Transactions on Acoustics, Speech, and Signal
+  Processing} 24 (1976), Nr. 4, S. 320--327
+
 \bibitem[Kut00]{kuttruff2000raumakustik}
 \textsc{Kuttruff}, Heinrich:
 \newblock \emph{Raumakustik}.
 \newblock S. Hirzel Verlag, 2000
 
+\bibitem[Lyo11]{lyons2011understanding}
+\textsc{Lyons}, Richard~G.:
+\newblock \emph{Understanding Digital Signal Processing}.
+\newblock 3rd.
+\newblock Prentice Hall, 2011
+
+\bibitem[OSB99]{oppenheim1999discrete}
+\textsc{Oppenheim}, Alan~V. ; \textsc{Schafer}, Ronald~W.  ; \textsc{Buck},
+  John~R.:
+\newblock \emph{Discrete-Time Signal Processing}.
+\newblock 2nd.
+\newblock Prentice Hall, 1999
+
 \bibitem[Sal01]{salomons2001computational}
 \textsc{Salomons}, Erik~M.:
 \newblock \emph{Computational Atmospheric Acoustics}.
 \newblock Springer, 2001
+
+\bibitem[Sys23]{espressif2023esp32s3}
+\textsc{Systems}, Espressif:
+\newblock \emph{ESP32-S3 Technical Reference Manual}, 2023.
+\newblock
+  \url{https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf}.
+  --
+\newblock Version 1.7
+
+\bibitem[Win95]{winkler1995range}
+\textsc{Winkler}, Thomas:
+\newblock Range estimation using chirp signals.
+\newblock {In: }\emph{Proceedings of IEEE International Conference on
+  Acoustics, Speech, and Signal Processing (ICASSP)}, IEEE, 1995, S. 365--368
 
 \end{thebibliography}
