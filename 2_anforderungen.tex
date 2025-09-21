@@ -28,208 +28,109 @@ Das beschriebene Anwendungsszenario bildet die Grundlage für die nachfolgenden 
 \subsection{Funktionale Anforderungen}
 
 \begin{verbatim}
--------------------------------------
-1. Signalerzeugung (Chirp)
--------------------------------------
-Description         : Der Sender muss akustische Chirp-Signale im Bereich 
-                      von 2–8 \ac{kHz} mit einer Dauer von 20–60 ms 
-                      zuverlässig erzeugen können.
-Verification Method : Funktionstest der Signalerzeugung durch Messung mit
-                      Oszilloskop und Spektralanalyse.
-Category            : Functional
+F1: Signalerzeugung (Chirp)
+-----------------------------------------------
+Description    : Akustische Chirp-Signale (2-8 kHz, 
+                 20-60 ms) zuverlässig erzeugen
+Verification   : Funktionstest mit Oszilloskop und 
+                 Spektralanalyse
+Category       : Functional
 
--------------------------------------
-2. Signalaufnahme
--------------------------------------
-Description         : Der Empfänger muss akustische Signale im gleichen Frequenzbereich 
-                      mit Abtastraten bis 48 \ac{kHz} aufnehmen können.
-Verification Method : Test der Mikrofon-Schnittstelle und Validierung der Abtastrate 
-                      über Software- und Hardwaremessung.
-Category            : Functional
+F2: Signalaufnahme
+-----------------------------------------------
+Description    : Akustische Signale mit Abtastraten 
+                 bis 48 kHz aufnehmen
+Verification   : Test der Mikrofon-Schnittstelle und
+                 Abtastrate-Validierung
+Category       : Functional
 
--------------------------------------
-3. Funksynchronisation
--------------------------------------
-Description         : Das System muss eine drahtlose Synchronisation der Knoten 
-                      (z. B. ESP-NOW) unterstützen, sodass der Empfänger zeitgenau 
-                      mit der Aufnahme beginnt.
-Verification Method : Messung der Zeitdifferenz zwischen Funksignal und Start 
-                      der Aufnahme, Analyse mit Logic Analyzer.
-Category            : Functional
+F3: Funksynchronisation
+-----------------------------------------------
+Description    : Drahtlose Synchronisation der Knoten
+                 (ESP-NOW) für zeitgenaue Aufnahme
+Verification   : Zeitdifferenz-Messung mit 
+                 Logic Analyzer
+Category       : Functional
 
--------------------------------------
-4. Signalverarbeitung (Korrelation)
--------------------------------------
-Description         : Der Empfänger muss die aufgenommenen Signale in Echtzeit 
-                      mittels Kreuzkorrelation mit einer Referenz analysieren, 
-                      um den Time-of-Flight zu bestimmen.
-Verification Method : Softwaretest der Korrelation auf bekannten Referenzdaten, 
-                      Validierung der Laufzeitbestimmung.
-Category            : Functional
+F4: Signalverarbeitung (Korrelation)
+-----------------------------------------------
+Description    : Echtzeitanalyse mittels 
+                 Kreuzkorrelation für ToF-Bestimmung
+Verification   : Softwaretest mit Referenzdaten
+Category       : Functional
 
--------------------------------------
-5. Distanzberechnung
--------------------------------------
-Description         : Das System muss die Laufzeitdifferenz in eine Entfernung d 
-                      umrechnen, unter Berücksichtigung der temperaturabhängigen 
-                      Schallgeschwindigkeit.
-Verification Method : Vergleich mit bekannten Referenzdistanzen unter verschiedenen 
-                      Temperaturbedingungen.
-Category            : Functional
+F5: Distanzberechnung
+-----------------------------------------------
+Description    : Umrechnung Laufzeitdifferenz in 
+                 Entfernung (temperaturabhängige 
+                 Schallgeschwindigkeit)
+Verification   : Vergleich mit Referenzdistanzen bei
+                 verschiedenen Temperaturen
+Category       : Functional
 
--------------------------------------
-6. Datenkommunikation
--------------------------------------
-Description         : Die berechnete Distanz muss lokal gespeichert oder über Funk 
-                      an andere Knoten oder eine zentrale Einheit übermittelt werden.
-Verification Method : Funktionstest der Datenspeicherung und Funkübertragung 
-                      zwischen den Knoten.
-Category            : Functional
+F6: Datenkommunikation
+-----------------------------------------------
+Description    : Lokale Speicherung oder 
+                 Funkübertragung der Distanz
+Verification   : Test der Datenspeicherung und 
+                 Funkübertragung
+Category       : Functional
 
--------------------------------------
-7. Messbereich
--------------------------------------
-Description         : Das System muss Distanzen bis mindestens 25 m zuverlässig messen können.
-Verification Method : Feldtests mit bekannten Referenzabständen im Bereich 1–25 m.
-Category            : Functional
-\end{verbatim}
-
-
-\subsection{Nicht-funktionale Anforderungen}
-
-
-\begin{verbatim}
--------------------------------------
-1. Signalerzeugung (Chirp)
--------------------------------------
-Description         : Der Sender muss akustische Chirp-Signale im Bereich 
-                      von 2–8 \ac{kHz} mit einer Dauer von 20–60 ms 
-                      zuverlässig erzeugen können.
-Verification Method : Funktionstest der Signalerzeugung durch Messung mit 
-                      Oszilloskop und Spektralanalyse.
-Category            : Functional
-
--------------------------------------
-2. Signalaufnahme
--------------------------------------
-Description         : Der Empfänger muss akustische Signale im gleichen 
-                      Frequenzbereich mit Abtastraten bis 48 \ac{kHz} 
-                      aufnehmen können.
-Verification Method : Test der Mikrofon-Schnittstelle und Validierung der 
-                      Abtastrate über Software- und Hardwaremessung.
-Category            : Functional
-
--------------------------------------
-3. Funksynchronisation
--------------------------------------
-Description         : Das System muss eine drahtlose Synchronisation der 
-                      Knoten (z. B. ESP-NOW) unterstützen, sodass der 
-                      Empfänger zeitgenau mit der Aufnahme beginnt.
-Verification Method : Messung der Zeitdifferenz zwischen Funksignal und 
-                      Start der Aufnahme, Analyse mit Logic Analyzer.
-Category            : Functional
-
--------------------------------------
-4. Signalverarbeitung (Korrelation)
--------------------------------------
-Description         : Der Empfänger muss die aufgenommenen Signale in 
-                      Echtzeit mittels Kreuzkorrelation mit einer Referenz 
-                      analysieren, um den Time-of-Flight zu bestimmen.
-Verification Method : Softwaretest der Korrelation auf bekannten 
-                      Referenzdaten, Validierung der Laufzeitbestimmung.
-Category            : Functional
-
--------------------------------------
-5. Distanzberechnung
--------------------------------------
-Description         : Das System muss die Laufzeitdifferenz in eine 
-                      Entfernung d umrechnen, unter Berücksichtigung der 
-                      temperaturabhängigen Schallgeschwindigkeit.
-Verification Method : Vergleich mit bekannten Referenzdistanzen unter 
-                      verschiedenen Temperaturbedingungen.
-Category            : Functional
-
--------------------------------------
-6. Datenkommunikation
--------------------------------------
-Description         : Die berechnete Distanz muss lokal gespeichert oder 
-                      über Funk an andere Knoten oder eine zentrale Einheit 
-                      übermittelt werden.
-Verification Method : Funktionstest der Datenspeicherung und 
-                      Funkübertragung zwischen den Knoten.
-Category            : Functional
-
--------------------------------------
-7. Messbereich
--------------------------------------
-Description         : Das System muss Distanzen bis mindestens 25 m 
-                      zuverlässig messen können.
-Verification Method : Feldtests mit bekannten Referenzabständen im 
-                      Bereich 1–25 m.
-Category            : Functional
+F7: Messbereich
+-----------------------------------------------
+Description    : Distanzmessung bis mindestens 25 m
+Verification   : Feldtests mit Referenzabständen 
+                 (1-25 m)
+Category       : Functional
 \end{verbatim}
 
 
 \subsection{Nicht-funktionale Anforderungen}
 
 \begin{verbatim}
--------------------------------------
-1. Robustheit gegenüber Störungen
--------------------------------------
-Description         : Das System muss Umgebungsgeräusche (Wind, Verkehr, 
-                      Tiere) und Mehrwegeffekte tolerieren und dennoch 
-                      eine zuverlässige Peak-Erkennung ermöglichen.
-Verification Method : Feldtests unter realen Outdoor-Bedingungen mit 
-                      künstlich hinzugefügtem Störgeräusch.
-Category            : Non-Functional
+NF1: Robustheit gegenüber Störungen
+-----------------------------------------------
+Description    : Toleranz gegenüber Umgebungsgeräuschen
+                 (Wind, Verkehr) und Mehrwegeffekten
+Verification   : Feldtests mit künstlichem Störgeräusch
+Category       : Non-Functional
 
--------------------------------------
-2. Messgenauigkeit
--------------------------------------
-Description         : Die Distanzmessung soll eine Genauigkeit im Bereich 
-                      von ± 0,1 m oder besser erreichen.
-Verification Method : Vergleich mit Referenzmessungen mittels 
-                      Laser-Distanzsensor.
-Category            : Non-Functional
+NF2: Messgenauigkeit
+-----------------------------------------------
+Description    : Distanzmessung mit ± 0,1 m Genauigkeit
+Verification   : Vergleich mit Laser-Distanzsensor
+Category       : Non-Functional
 
--------------------------------------
-3. Energieeffizienz
--------------------------------------
-Description         : Das System muss für batteriebetriebenen Einsatz 
-                      optimiert sein, indem Rechen- und Funkoperationen 
-                      energieeffizient geplant werden.
-Verification Method : Messung des Stromverbrauchs während verschiedener 
-                      Betriebsmodi.
-Category            : Non-Functional
+NF3: Energieeffizienz
+-----------------------------------------------
+Description    : Optimierung für batteriebetriebenen 
+                 Einsatz (energieeffiziente Operationen)
+Verification   : Stromverbrauch-Messung in verschiedenen
+                 Betriebsmodi
+Category       : Non-Functional
 
--------------------------------------
-4. Echtzeitfähigkeit
--------------------------------------
-Description         : Die gesamte Messung (Signalerzeugung, Aufnahme, 
-                      Korrelation, Berechnung) soll innerhalb von weniger 
-                      als 100 ms abgeschlossen sein.
-Verification Method : Messung der End-to-End-Latenz mit Oszilloskop oder 
-                      Logic Analyzer.
-Category            : Non-Functional
+NF4: Echtzeitfähigkeit
+-----------------------------------------------
+Description    : Gesamte Messung unter 100 ms 
+                 (Erzeugung bis Berechnung)
+Verification   : End-to-End-Latenz-Messung mit 
+                 Oszilloskop oder Logic Analyzer
+Category       : Non-Functional
 
--------------------------------------
-5. Portabilität und Skalierbarkeit
--------------------------------------
-Description         : Die Knoten sollen kompakt, leicht und in größeren 
-                      Netzwerken einsetzbar sein.
-Verification Method : Überprüfung des Formfaktors sowie Netzwerktests mit 
-                      mehr als zwei Knoten.
-Category            : Non-Functional
+NF5: Portabilität und Skalierbarkeit
+-----------------------------------------------
+Description    : Kompakte Knoten für größere Netzwerke
+Verification   : Formfaktor-Überprüfung und 
+                 Netzwerktests
+Category       : Non-Functional
 
--------------------------------------
-6. Wartungsarmut
--------------------------------------
-Description         : Das System soll im Außenraum über längere Zeiträume 
-                      ohne manuelle Justierung oder Kalibrierung zuverlässig 
-                      arbeiten.
-Verification Method : Langzeittest im Freien unter wechselnden 
-                      Umweltbedingungen.
-Category            : Non-Functional
+NF6: Wartungsarmut
+-----------------------------------------------
+Description    : Zuverlässiger Betrieb im Außenraum 
+                 ohne manuelle Justierung
+Verification   : Langzeittest unter wechselnden 
+                 Umweltbedingungen
+Category       : Non-Functional
 \end{verbatim}
 
 
